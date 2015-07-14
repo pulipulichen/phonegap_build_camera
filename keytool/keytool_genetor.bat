@@ -1,1 +1,2 @@
-keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+set /p aliseName=Enter The alise name:%=%
+keytool -genkey -v -keystore %aliseName%.keystore -alias %aliseName% -keyalg RSA -keysize 2048 -validity 10000
