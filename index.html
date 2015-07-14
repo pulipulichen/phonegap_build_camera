@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>PhoneGap相機功能展示</title> 
+	<meta charset="utf-8">
+	
+    <!-- 引用jQuery Mobile -->
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.min.css" />
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.0.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+    <!-- 引用phonegap.js (檔案本身不存在專案中) -->
+	<script type="text/javascript" src="phonegap.js"></script>
+</head>
+
+<body>
+
+<div id="page1" data-role="page" style="text-align:center;">
+    <header data-role="header"><h1>頁首</h1></header>
+
+    <!-- 拍照按鈕 -->
+    <input type="button" value="拍照" onclick="onBtnCamera_Click()" id="btnCamera" />
+
+    <!-- 顯示拍照結果 -->
+    <img id="myImage" style="width:90%;height:200px;border:1px solid gray;"  src="blank.jpg" />
+
+    <footer data-role="footer"><h1>頁尾</h1></footer>
+</div>
+
+<!-- 使用PhoneGap語法 --> 
+<script type="text/javascript">
+//透過PhoneGap啟動相機
+function onBtnCamera_Click()
+{
+    var options = { 
+        quality: 30,
+        destinationType: Camera.DestinationType.DATA_URL
+    };
+
+    navigator.camera
+        .getPicture(onCameraTakeSuccess, onCameraTakeFail, options);
+}
+
+   
+//成功後事件：顯示拍照結果
+function onCameraTakeSuccess(imageData) {
+   var image = document.getElementById('myImage');
+   image.src = "data:image/jpeg;base64," + imageData;
+}
+
+//失敗後事件：顯示失敗原因
+function onCameraTakeFail(message) {
+   alert('失敗: ' + message);
+}
+</script>
+
+</body>
+</html>
