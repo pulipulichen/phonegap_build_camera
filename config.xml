@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="phonegap_build_camera_20150717.pulipuli.blogspot.tw" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="phonegap_build_camera_20150716.pulipuli.blogspot.tw" version="1.0.0">
 
   <name>PhoneGap相機功能展示</name>
   <description>演講「從網頁開發進入到Android APP行動應用開發」展示用的APP，以PhoneGap Build建立，展示相機的功能。</description>
